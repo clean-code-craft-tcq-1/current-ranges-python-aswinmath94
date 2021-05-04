@@ -9,8 +9,8 @@ class CurrentRangesTest(unittest.TestCase):
         self.assertTrue(bms_monitoring_ranges.get_continous_range_count([1, 2, 3, 4, 5, 6, 8, 9, 15, 18, 22]) == 'Success')
         self.assertTrue(bms_monitoring_ranges.get_continous_range_count([]) == 'Invalid Input')
 
-    def test_pass(self):
-        self.assertFalse(bms_monitoring_ranges.get_continous_range_count([1, 2, 3, 4, 5, 6, 8, 9, 15, 18, 22]) == 'Invalid Input')
+    def test_fail(self):
+        self.assertTrue(bms_monitoring_ranges.get_continous_range_count([1, 2, 3, 4, 5, 6, 8, 9, 15, 18, 22]) == 'Invalid Input')
 
 
 if __name__ == '__main__':
