@@ -38,7 +38,10 @@ def range_binner(ranges,bin_parameters,range_list):
     for i in range(0, bin_parameters['no_of_bins']):
         temp = []
         for j in ranges:
-            if lower_limit_check(j,range_list[i]) and j < upper_limit_check(j,range_list[i]):
+            lower_limit_flag = lower_limit_check(j,range_list[i])
+            upper_limit_flag = upper_limit_check(j,range_list[i])
+            limit_flag = check_within_limit(lower_limit_flag,upper_limit_flag)
+            if limit_flag:
                 temp += [j]
         bin += [temp]
     return bin
@@ -55,6 +58,13 @@ def upper_limit_check(number,upper_limit):
     else:
         return False
 
+def check_within_limit(lower_limit_flag,upper_limit_flag):
+    limit_flag = False
+    if lower_limit_flag and upper_limit_flag:
+        return True
+    return limit_flag
+    
+    
 def get_output(bin_list):
     print(bin_list)
     print('Ranges','Readings')
