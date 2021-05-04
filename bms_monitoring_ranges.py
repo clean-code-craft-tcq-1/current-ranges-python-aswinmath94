@@ -49,22 +49,19 @@ def range_binner(ranges,bin_parameters,range_list):
 def lower_limit_check(number,lower_limit):
     if number >= lower_limit:
         return True
-    else:
-        return False
+    return False
 
 def upper_limit_check(number,upper_limit):
     if number <= upper_limit:
         return True
-    else:
-        return False
+    return False
 
 def check_within_limit(lower_limit_flag,upper_limit_flag):
-    limit_flag = False
     if lower_limit_flag and upper_limit_flag:
         return True
-    return limit_flag
-    
-    
+    return False
+
+
 def get_output(bin_list):
     print(bin_list)
     print('Ranges','Readings')
