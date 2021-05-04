@@ -38,7 +38,7 @@ def range_binner(ranges,bin_parameters,range_list):
     for i in range(0, bin_parameters['no_of_bins']):
         temp = []
         for j in ranges:
-            if j >= range_list[i] and j <= range_list[i + 1]:
+            if j > range_list[i]-1 and j < range_list[i + 1]+1:
                 temp += [j]
         bin += [temp]
     return bin
