@@ -51,6 +51,8 @@ def lower_limit_check(number,lower_limit):
 
 def upper_limit_check(number,upper_limit):
     if number <= upper_limit:
+        return True
+    else:
         return False
 
 def get_output(bin_list):
