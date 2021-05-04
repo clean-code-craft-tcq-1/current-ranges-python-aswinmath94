@@ -38,10 +38,20 @@ def range_binner(ranges,bin_parameters,range_list):
     for i in range(0, bin_parameters['no_of_bins']):
         temp = []
         for j in ranges:
-            if j > range_list[i]-1 and j < range_list[i + 1]+1:
+            if lower_limit_check(j,range_list[i]) and j < upper_limit_check(j,range_list[i]):
                 temp += [j]
         bin += [temp]
     return bin
+
+def lower_limit_check(number,lower_limit):
+    if number >= lower_limit:
+        return True
+    else:
+        return False
+
+def upper_limit_check(number,upper_limit):
+    if number <= upper_limit:
+        return False
 
 def get_output(bin_list):
     print(bin_list)
